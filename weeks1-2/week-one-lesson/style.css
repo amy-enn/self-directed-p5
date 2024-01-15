@@ -1,0 +1,15 @@
+:root {
+  font-family: monospace;
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
