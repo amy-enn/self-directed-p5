@@ -10,30 +10,37 @@
 
 <body>
   <header>
-
-    <h1>Landscape Generator</h1>
+    <h1>~ Landscape Generator ~</h1>
+    <p>Creating Basic Shapes in P5.js</p>
   </header>
   <div id="app-container">
-    <div id="shape-legend">
-      <!-- Shape buttons will go here -->
-      <button id="sunButton">Sun</button>
-      <button id="oakTreeButton">Oak Tree</button>
-      <button id="pineTreeButton">Pine Tree</button>
-      <button id="cloudButton">Cloud</button>
-      <button id="butterflyButton">Butterfly</button>
+    <div id="left-panel">
 
-      <div>
-        <label for="skySlider">Sky Color:</label>
-        <input type="range" id="skySlider" min="0" max="2" value="1">
+      <div id="shape-legend">
+        <!-- buttons and sliders for the shapes -->
+        <button id="sunButton">Sun</button>
+        <button id="oakTreeButton">Oak Tree</button>
+        <button id="pineTreeButton">Pine Tree</button>
+        <button id="cloudButton">Cloud</button>
+        <button id="butterflyButton">Butterfly</button>
+        
+        <div>
+          <label for="skySlider">Sky Color:</label>
+          <input type="range" id="skySlider" min="0" max="2" value="1">
+        </div>
+        
+        <div>
+          <label for="earthSlider">Earth Color:</label>
+          <input type="range" id="earthSlider" min="0" max="2" value="1">
+        </div>
+        
       </div>
-
-      <div>
-        <label for="earthSlider">Earth Color:</label>
-        <input type="range" id="earthSlider" min="0" max="2" value="1">
+      <!-- the clear and download buttons -->
+      <div id="clear-save-buttons">
+        
+        <button id="clearButton">Clear</button>
+        <button id="downloadButton">Download</button>
       </div>
-
-
-      <!-- ... other shapes -->
     </div>
     <div id="canvas-container"></div>
   </div>

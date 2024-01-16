@@ -2,17 +2,20 @@ import p5 from 'p5';
 
 export default function sketch(p, appState) {
 
+    // p5's setup function - creates the canvas and preps the page for the sketch
     p.setup = () => {
         let canvas = p.createCanvas(p.windowWidth * 0.75, p.windowHeight * 0.75);
         canvas.parent('canvas-container');
     };
 
+    // p5's draw function... add white background to the canvas
     p.draw = () => {
         p.background(255);
 
         drawSky();
         drawEarth();
 
+        // draw the canvas according to app state - this is always rerendering so as the state variables fill they will all be rendered over again so the drawing is always complete
         if (appState.sunPosition) {
             drawSun(appState.sunPosition.x, appState.sunPosition.y);
         }
@@ -32,19 +35,25 @@ export default function sketch(p, appState) {
         if (appState.butterflyPosition) {
             drawButterfly(appState.butterflyPosition.x, appState.butterflyPosition.y);
         }
-
-        
-
     };
 
+    // download function to save the user's artwork
+    p.downloadCanvas = () => {
+        p.saveCanvas('myLandscape', 'png');
+    };
+
+    appState.pInstance = p;
+    
+
     // shape drawing functions
+    // bright yellow circle
     function drawSun(x, y) {
-        // bright yellow circle
         p.fill(255, 204, 0);
         p.noStroke();
         p.ellipse(x, y, 200, 200);
     }
 
+    // brown rectangle trunk with green foliage circle
     function drawOakTree(x, y) {
         const trunkWidth = 40;
         const trunkHeight = 100;
@@ -60,6 +69,7 @@ export default function sketch(p, appState) {
         p.ellipse(x, y - trunkHeight / 2, leavesDiameter, leavesDiameter);
     }
 
+    // brown rectangle trunk with green foliage triangle
     function drawPineTree(x, y) {
         const trunkWidth = 40;
         const trunkHeight = 100;
@@ -75,6 +85,7 @@ export default function sketch(p, appState) {
         p.triangle(x, y - treeHeight, x-100, y, x + 100, y);
     }
 
+    // light grey ellipse
     function drawCloud(x, y) {
         // off-white ellipse placeholder
         p.fill(240);
@@ -82,6 +93,7 @@ export default function sketch(p, appState) {
         p.ellipse(x, y, 400, 100);
     }
 
+    // blue top of canvas
     function drawSky() {
         let skyCol;
         switch (appState.skyColor) {
@@ -99,6 +111,7 @@ export default function sketch(p, appState) {
         p.rect(0, 0, p.width, p.height * 0.67);
     }
 
+    // green (grass) or brown (dirt) bottom of canvas
     function drawEarth() {
         let earthCol;
         switch (appState.earthColor) {
@@ -117,6 +130,7 @@ export default function sketch(p, appState) {
     }
 
 
+    // two semi-circles ("arcs") with a pink fill look like wings
     function drawButterfly(x, y) {
         p.fill(255, 182, 193);
         p.noStroke();
@@ -151,7 +165,6 @@ export default function sketch(p, appState) {
         } else if (appState.selectedShape === "butterfly") {
             appState.butterflyPosition = { x: p.mouseX, y: p.mouseY };
         }
-        // ... other shapes
     };
     
 
