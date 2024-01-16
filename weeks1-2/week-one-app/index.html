@@ -1,13 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landscape Generator</title>
-  </head>
-  <body>
-    <div id="app">hello</div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landscape Generator</title>
+</head>
+
+<body>
+  <header>
+
+    <h1>Landscape Generator</h1>
+  </header>
+  <div id="app-container">
+    <div id="shape-legend">
+      <!-- Shape buttons will go here -->
+      <button id="sunButton">Sun</button>
+      <button id="treeButton">Tree</button>
+      <button id="cloudButton">Cloud</button>
+
+      <div>
+        <label for="skySlider">Sky Color:</label>
+        <input type="range" id="skySlider" min="0" max="2" value="1">
+      </div>
+
+      <div>
+        <label for="earthSlider">Earth Color:</label>
+        <input type="range" id="earthSlider" min="0" max="2" value="1">
+      </div>
+
+
+      <!-- ... other shapes -->
+    </div>
+    <div id="canvas-container"></div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
