@@ -27,4 +27,6 @@ Steps:
 - **Vanilla JavaScript**: To manage application logic and state.
 - **HTML/CSS**: For structuring and styling the app's' frontend.
 
+### Final Product
 
+![gif of the app](./public/Recording%202024-01-16%20at%2018.16.56.gif)
