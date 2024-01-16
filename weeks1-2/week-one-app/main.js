@@ -5,10 +5,12 @@ import sketch from './sketch';
 let appState = {
   selectedShape: "none",
   sunPosition: null,
-  treePosition: null,
+  oakTreePosition: null,
+  pineTreePosition: null,
   cloudPosition: null,
   skyColor: null,
-  earthColor: null
+  earthColor: null,
+  butterflyPosition: null,
 };
 
 
@@ -16,12 +18,20 @@ document.getElementById('sunButton').addEventListener('click', () => {
   appState.selectedShape = 'sun';
 });
 
-document.getElementById('treeButton').addEventListener('click', () => {
-  appState.selectedShape = 'tree';
+document.getElementById('oakTreeButton').addEventListener('click', () => {
+  appState.selectedShape = 'oakTree';
+});
+
+document.getElementById('pineTreeButton').addEventListener('click', () => {
+  appState.selectedShape = 'pineTree';
 });
 
 document.getElementById('cloudButton').addEventListener('click', () => {
   appState.selectedShape = 'cloud';
+});
+
+document.getElementById('butterflyButton').addEventListener('click', () => {
+  appState.selectedShape = 'butterfly';
 });
 
 document.getElementById('skySlider').addEventListener('input', (event) => {
