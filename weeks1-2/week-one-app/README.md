@@ -1,5 +1,7 @@
 ## Practice App: Landscape Generator
 
+![gif of the app](./public/Recording%202024-01-16%20at%2018.16.56.gif)
+
 Concept: An interactive canvas where users can design their own landscape scene by placing premade shapes like a sun, hills, trees, and clouds.
 
 
@@ -27,6 +29,3 @@ Steps:
 - **Vanilla JavaScript**: To manage application logic and state.
 - **HTML/CSS**: For structuring and styling the app's' frontend.
 
-### Final Product
-
-![gif of the app](./public/Recording%202024-01-16%20at%2018.16.56.gif)
