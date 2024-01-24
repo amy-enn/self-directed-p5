@@ -1,19 +1,50 @@
 
 export default function sketch(p) {
 
-    let particles = [];
     let rockY, rockHeight;
     let pulseAngle = 0;
+
+    // wave variables
+    // wave heights
+    let waveAmplitude1 = 7;
+    let waveAmplitude2 = 5;
+    let waveAmplitude3 = 5;
+
+    // lengths of the waves
+    let waveLength1 = 200;
+    let waveLength2 = 220;
+    let waveLength3 = 210;
+
+    // speeds of the wave motions
+    let waveSpeed1 = 0.015;
+    let waveSpeed2 = -0.01;
+    let waveSpeed3 = -0.01;
+
+    // phase offsets
+    let waveOffset1 = 0;
+    let waveOffset2 = 4;
+    let waveOffset3 = 4;
+
+    // bobbing variables
+    let bobbingSpeed1 = 0.0012;
+    let bobbingSpeed2 = 0.001;
+    // up/down movement, in pixels
+    let bobbingAmount1 = 5;
+    let bobbingAmount2 = 8;
+    // vertical offset
+    let bobbingOffset1 = 0;
+    let bobbingOffset2 = 0;
+
+    // ship variables
+    let shipX;
+    let shipSpeed = 0.06;
+
 
     // set up the canvas
     p.setup = function () {
         p.createCanvas(p.windowWidth * .75, p.windowWidth * .75);
-        // create the particles
-        for (let i = 0; i < 120; i++) {
-            let x = p.random(p.width);
-            let y = p.random(p.height);
-            particles.push(new Particle(x, y));
-        }
+        // start the ship offscreen
+        shipX = -30;
     };
 
     // create the sketch pieces
@@ -21,65 +52,101 @@ export default function sketch(p) {
         p.background(220);
 
         pulseAngle += 0.015;
+        bobbingOffset1 = p.sin(p.millis() * bobbingSpeed1) * bobbingAmount1;
+        bobbingOffset2 = p.sin(p.millis() * bobbingSpeed2) * bobbingAmount2;
 
         // sky
-        p.fill(135, 206, 235);
+        p.fill(0, 25, 51);
         p.noStroke();
         p.rect(0, 0, p.width, p.height * 2 / 3);
+
+        // moon
+        p.fill(202, 202, 202);
+        p.noStroke();
+        p.circle(p.width * .5, p.height * 2 / 3, p.width * .95);
 
         // sea
         p.fill(0, 105, 148);
         p.noStroke();
         p.rect(0, p.height * 2 / 3, p.width, p.height / 3);
 
+        // update the ship's position each draw
+        shipX += shipSpeed;
+        // reset the ship's position once it reaches the other side
+        if (shipX > p.width) {
+            shipX = -30;
+        }
+
+        // ship (moves behind the lighthouse)
+        drawShip(shipX);
+
         // lighthouse
         drawLighthouse();
 
-        // display particles for fog
-        for (let i = particles.length - 1; i >= 0; i--) {
-            particles[i].update();
-            particles[i].display();
-            if (particles[i].isFinished()) {
-                particles.splice(i, 1);
+        // wave animations
+        drawWaves();
+    }
+
+
+    // draw the ship pieces
+    function drawShip(x) {
+        let shipY = p.height * 2 / 3 - 10;
+
+        // ship body - half circle
+        p.fill(102, 51, 0);
+        // p.rect(x, shipY, 30, 10);
+        p.arc(x + 15, shipY + 4, 22, 18, 0, p.PI);
+
+        // sails
+        p.fill(255);
+        p.triangle(
+            x + 12, shipY + 2,
+            x + 12, shipY - 19,
+            x + 28, shipY + 2
+        );
+        p.triangle(
+            x + 5, shipY,
+            x + 10, shipY - 22,
+            x + 15, shipY
+        );
+    }
+
+    // draw the waves animations
+    function drawWaves() {
+        // three layers of waves
+        for (let layer = 0; layer < 3; layer++) {
+            p.noStroke();
+            p.beginShape();
+            for (let x = 0; x <= p.width; x += 10) {
+                let y;
+                // if first layer
+                if (layer === 0) {
+                    p.fill(0, 80, 140);
+                    y = p.height * 2 / 3 + p.sin(waveOffset1 + (x * 2 * p.PI) / waveLength1) * waveAmplitude1 + bobbingOffset1;
+                    // if second layer
+                } else if (layer === 1) {
+                    p.fill(0, 90, 140);
+                    y = p.height * 2 / 3 + p.sin(waveOffset2 + (x * 2 * p.PI) / waveLength2) * waveAmplitude2 + bobbingOffset2;
+                }
+                // third layer
+                else if (layer === 2) {
+                    p.fill(0, 105, 148);
+                    y = p.height * 2 / 3 + p.sin(waveOffset3 + (x * 2 * p.PI) / waveLength3) * waveAmplitude1 + bobbingOffset1;
+                }
+                p.vertex(x, y);
+            }
+            // close the shape
+            p.vertex(p.width, p.height);
+            p.vertex(0, p.height);
+            p.endShape(p.CLOSE);
+
+            if (layer === 0) {
+                waveOffset1 += waveSpeed1;
+            } else {
+                waveOffset2 += waveSpeed2;
             }
         }
     }
-
-    // particle class for the fog
-    class Particle {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            this.originX = x;
-            this.originY = y;
-            this.size = p.random(200, 300);
-            this.alpha = p.random(20, 80);
-            this.angle = p.random(p.TWO_PI);
-            this.rotationSpeed = p.random(0.01, 0.01);
-            this.radius = p.random(5, 20);
-             // 1 for clockwise, -1 for counterclockwise
-            this.direction = p.random([1, -1]);
-        }
-
-        update() {
-            this.angle += this.rotationSpeed * this.direction;
-            this.x = this.originX + p.cos(this.angle) * this.radius;
-            this.y = this.originY + p.sin(this.angle) * this.radius;
-        }
-
-        display() {
-            p.noStroke();
-            p.fill(255, 255, 255, this.alpha);
-            let ellipseWidth = this.size;
-            let ellipseHeight = this.size * 0.6;
-            p.ellipse(this.x, this.y, ellipseWidth, ellipseHeight);
-        }
-
-        isFinished() {
-            return this.alpha < 0;
-        }
-    }
-
 
 
     function drawLighthouse() {
@@ -89,14 +156,14 @@ export default function sketch(p) {
         let towerWidthBottom = towerWidthTop * 1.3;
         let towerHeight = p.height * 0.3;
         // the rock is wider than the base of the tower
-        let rockWidth = towerWidthBottom * 2;
-        rockHeight = rockWidth / 2.2;
+        let rockWidth = towerWidthBottom * 3;
+        rockHeight = rockWidth / 3;
         // center the rock under the tower
         let rockX = (p.width * 0.33) - (rockWidth / 1.8);
         rockY = p.height * 0.7;
 
         // position of the lighthouse tower
-        let towerX = p.width * 0.33 - towerWidthTop / 2;
+        let towerX = p.width * 0.33 - towerWidthTop / 2.2;
         // place the tower on top of the rock but partway down
         let towerY = rockY - rockHeight - towerHeight + p.height * 0.05;
 
