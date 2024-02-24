@@ -32,20 +32,24 @@
 * Clicks: Changing the visualization on a mouse click (might do something novelty like changing the colors, etc).
 
 
-### Learn Zoom and Pan Features
+~~### Learn Zoom and Pan Features~~
 
-**Objective:** Zoom and pan can help users navigate through larger datasets and charts.
+~~**Objective:** Zoom and pan can help users navigate through larger datasets and charts.~~
 
-* Zoom: This might involve scaling the data points and adjusting the axes accordingly.
+~~* Zoom: This might involve scaling the data points and adjusting the axes accordingly.~~
 
-* Pan: Allowing the user to click and drag to move around a larger dataset.
+~~* Pan: Allowing the user to click and drag to move around a larger dataset.~~
 
 
-### Complete a Small App with Basic Charts - TBD
+~~### Complete a Small App with Basic Charts - TBD~~
 
-- I'll probably choose two of the types of charts I did for this week
+~~- I'll probably choose two of the types of charts I did for this week~~
 
-- Fetch data from an API or use a static JSON file
+~~- Fetch data from an API or use a static JSON file~~
 
-- Implement a hover tool tip, a click listener of some sort, either pan OR zoom, and responsiveness of the chart canvas
+~~- Implement a hover tool tip, a click listener of some sort, either pan OR zoom, and responsiveness of the chart canvas~~
+
+## Update:
+
+Moving learning the pan and zoom features on a future unit; this one doesn't have a logical place to use the feature.
 
