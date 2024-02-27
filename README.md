@@ -26,26 +26,8 @@
    *  Complete a small (~4-6 hr) app that displays two different simple visualization types using fetched data.
 
 
-
-~~## Weeks 5-6~~
-~~### More Advanced Charting & Interaction Via P5.js~~
-
-   ~~*  Learn about and practice 2-3 more advanced chart types of my choice such as:~~
-       ~~- dendrogram~~
-       ~~- phylogenetic tree~~
-       ~~- multi-axis graphs~~
-       ~~- time-series data~~
-
-   ~~*  Learn to display a tool tip~~
-
-   ~~*  Combine 2 different datasets into one visualization~~
-
-   ~~*  Complete a small (~4-6 hr) app to practice this week's learning points and that includes some sort of dynamic update, such as:~~
-       ~~- realtime data updating~~
-       ~~- user interaction (hovers, clicks, etc)~
-
 # Weeks 5-6
-## Data Viz x Recursion X Art?
+### Data Viz x Recursion X Art?
 
 #### I didn't have very much fun with my last unit on data viz so I'm going to try to make this unit more artistic than I initially planned. 
 
