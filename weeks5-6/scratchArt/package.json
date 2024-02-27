@@ -1,0 +1,13 @@
+{
+  "name": "scratchart",
+  "version": "1.0.0",
+  "description": "browser scratch art",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Imp0ster",
+  "dependencies": {
+    "p5": "^1.8.0"
+  }
+}
