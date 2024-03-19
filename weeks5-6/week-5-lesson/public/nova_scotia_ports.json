@@ -75,7 +75,7 @@
         "Main Port Name": "Windsor",
         "Latitude": 45.0,
         "Longitude": -64.15,
-        "Tidal Range (m)": 0.0,
+        "Tidal Range (m)": 10.0,
         "Channel Depth (m)": 6.4,
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 6.4,
@@ -128,8 +128,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Very Small",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Lockeport Harbor",
@@ -140,8 +140,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Very Small",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Baddeck Harbour",
@@ -152,8 +152,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Small",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Shelburne Harbour",
@@ -164,8 +164,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Medium",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Little Bras D Or",
@@ -260,8 +260,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Small",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Port Hood",
@@ -272,8 +272,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Small",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Riverport",
@@ -284,8 +284,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Small",
+        "Harbor Type": "Riverport"
     },
     {
         "Main Port Name": "Lunenburg Harbour",
@@ -296,8 +296,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Medium",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Crawley Creek",
@@ -308,8 +308,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Very Small",
+        "Harbor Type": "River (Natural)"
     },
     {
         "Main Port Name": "Yarmouth Harbor (Canada)",
@@ -320,8 +320,8 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Medium",
+        "Harbor Type": "Coastal (Natural)"
     },
     {
         "Main Port Name": "Arichat Harbour",
@@ -332,7 +332,7 @@
         "Anchorage Depth (m)": 0.0,
         "Cargo Pier Depth (m)": 0.0,
         "Oil Terminal Depth (m)": 0.0,
-        "Harbor Size": " ",
-        "Harbor Type": " "
+        "Harbor Size": "Very Small",
+        "Harbor Type": "Coastal (Natural)"
     }
 ]
